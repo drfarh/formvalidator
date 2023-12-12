@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+
+</head>
+
+
+<body>
+    <input id="Email" type="text" placeholder="Input your Email">
+    <p id="messageEM">Email</p><br><br>
+
+    <input id="pwd" type="text" placeholder="Input Password">
+    <p id="messagePWDUC">Password</p>
+    <p id="messagePWDLC">Password</p>
+    <p id="messagePWDNM">Password</p>
+    <p id="messagePWDSPC">Password</p>
+
+    <button id = 'bt'">click on validate</button>
+
+    <script>
+        // Email Validation Method
+        function validateEM(){
+        //go to input box and grab value them then assign to
+        let emailvalue= document.getElementById('Email').value;
+        //define condition
+        let conditionEM=/[@]/g;
+        //compare value to condition
+
+        if(emailvalue.match(conditionEM)){
+            //if true do ABC
+            document.getElementById('messageEM').innerHTML='Yes valid Email';
+        }
+        else{
+            //else it is false and do xyz
+            document.getElementById('messageEM').innerHTML='Not a valid Email: @ missing';
+
+        }
+    }
+
+    // Password uppercase validation method
+    function validateUC(){
+        //go to input box and grab value them then assign to
+        let pwdUC= document.getElementById('pwd').value;
+        //define condition
+        let conditionUC=/[A-Z]/g;
+        //compare value to condition
+
+        if(pwdUC.match(conditionUC)){
+            //if true do ABC
+            document.getElementById('messagePWDUC').innerHTML='Yes valid Password';
+        }
+        else{
+            //else it is false and do xyz
+            document.getElementById('messagePWDUC').innerHTML='Not a valid Password: no uppercase letter';
+
+        }
+
+    }
+
+    // Password lowercase validation method
+    function validateLC(){
+        //go to input box and grab value them then assign to
+        let pwdLC= document.getElementById('pwd').value;
+        //define condition
+        let conditionLC=/[a-z]/g;
+        //compare value to condition
+
+        if(pwdLC.match(conditionLC)){
+            //if true do ABC
+            document.getElementById('messagePWDLC').innerHTML='Yes valid Password';
+        }
+        else{
+            //else it is false and do xyz
+            document.getElementById('messagePWDLC').innerHTML='Not a valid Password: no lowercase letter';
+
+        }
+    }
+
+    // Password number validation method
+    function validateNM(){
+        //go to input box and grab value them then assign to
+        let pwdNM= document.getElementById('pwd').value;
+        //define condition
+        let conditionNM=/[0-9]/g;
+        //compare value to condition
+
+        if(pwdNM.match(conditionNM)){
+            //if true do ABC
+            document.getElementById('messagePWDNM').innerHTML='Yes valid Password';
+        }
+        else{
+            //else it is false and do xyz
+            document.getElementById('messagePWDNM').innerHTML='Not a valid Password: no number';
+
+        }
+
+    }
+
+   // Password SPC validation method
+   function validateSPC(){
+        //go to input box and grab value them then assign to
+        let pwdSPC= document.getElementById('pwd').value;
+        //define condition
+        let conditionSPC=/[!@#$%&]/g;
+        //compare value to condition
+
+        if(pwdSPC.match(conditionSPC)){
+            //if true do ABC
+            document.getElementById('messagePWDSPC').innerHTML='Yes valid Password';
+        }
+        else{
+            //else it is false and do xyz
+            document.getElementById('messagePWDSPC').innerHTML='Not a valid Password: no special character';
+
+        }
+
+    }    
+    
+    document.getElementById('bt').addEventListener("click",validateEM);
+    document.getElementById('bt').addEventListener("click",validateUC);
+    document.getElementById('bt').addEventListener("click",validateLC);
+    document.getElementById('bt').addEventListener("click",validateNM);
+    document.getElementById('bt').addEventListener("click",validateSPC);
+
+    </script>    
+    
+</body>
+</html>
